@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
+import 'screens/adivina_screen.dart';
+import 'screens/perfil_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +12,15 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Examen Flutter',
+      initialRoute: '/',
+      routes: {
+        '/':(context) => const HomeScreen(),
+        '/perfil': (context) => const PerfilScreen(),
+        '/adivina': (context) => const AdivinaScreen(),
+      },
     );
   }
 }
